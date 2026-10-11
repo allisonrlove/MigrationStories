@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Placeholder image">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D7CEC7"/>
+      <stop offset="1" stop-color="#C09F80"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <g fill="none" stroke="#76323F" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+    <rect x="450" y="290" width="300" height="220" rx="14"/>
+    <circle cx="530" cy="365" r="26"/>
+    <path d="M450 480 l90-80 70 60 50-40 90 70"/>
+  </g>
+  <text x="600" y="590" text-anchor="middle" font-family="Georgia, serif" font-size="40" fill="#4E1F29">Replace this placeholder image</text>
+</svg>

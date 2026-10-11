@@ -1,0 +1,32 @@
+{% comment %}
+  Essay Figure - a captioned photograph or object.
+
+  Usage:
+    {% include essay/figure.html
+      image="images/figure_2.jpg"
+      alt="Short description for screen readers"
+      caption="What this is. Credit: who made it / where it came from, year."
+      size="medium"
+    %}
+
+  Parameters:
+    image    - path to the image file (required)
+    alt      - short description for screen readers (optional)
+    caption  - caption and source citation (optional but expected)
+    size     - small | medium | large   (default: medium)
+{% endcomment %}
+
+{% capture img_url %}{% include helpers/image-path.html image-path=include.image %}{% endcapture %}
+{% assign img_url = img_url | strip %}
+{% assign fig_size = include.size | default: 'medium' %}
+
+{::nomarkdown}
+{% if img_url != '' %}
+<figure class="essay-figure essay-figure--{{ fig_size }}">
+  <img src="{{ img_url }}" alt="{{ include.alt | default: include.caption | strip_html | escape }}">
+  {% if include.caption %}<figcaption>{{ include.caption | markdownify }}</figcaption>{% endif %}
+</figure>
+{% else %}
+<div class="xanthan-warning">essay/figure needs an image="..." path.</div>
+{% endif %}
+{:/nomarkdown}
