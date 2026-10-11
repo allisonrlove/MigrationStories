@@ -1,16 +1,16 @@
 ---
 title: Essays
 layout: base
-header-title: Essays
+header-image: "/assets/images/immigration_collage.jpg"
+header-tier: banner
+header-title: Student Essays
+header-position: 35% center
 ---
 
-# Essays
+<div class="home-intro" markdown="1">
 
-This template includes three sample essays on Southwest food history — nachos, chiles, and tamales — written with AI assistance as placeholder content. They're here to demonstrate what student essays can look like: how to use images, pull quotes, scrolling backgrounds, and other Xanthan components in a longer piece of writing.
+Each essay pairs a family's migration story with a short clip from the oral history that inspired it. The three below are fictional samples that show what a finished essay looks like. To add your own, see the [instructions](../instructions/).
 
-Browse them to get a feel for the format. When you're ready to build your own project, you'll replace these with your students' essays — same structure, your topic.
+</div>
 
-{% assign all_pages = site.pages %}
-{% assign cards = all_pages | where_exp: "p", "p.path contains 'essays/'" | where_exp: "p", "p.path != 'essays/index.md'" %}
-
-{% include cards/card-grid.html cards=cards %}
+{% include cards/essay-grid.html %}

@@ -2,24 +2,27 @@
 title: "US Immigration History"
 layout: base
 date: 2026-10-13
-header-image: "/assets/images/immigration_collage.jpg" 
+header-image: "/assets/images/immigration_collage.jpg"
 header-zoom: 95%
-header-title: Family Migration Stories 
-header-subtitle: US Immigration History 2H Fall 2026 
+header-title: Family Migration Stories
+header-eyebrow: Oral History Project
+header-divider: Student Essays
+header-subtitle: US Immigration History 2H Fall 2026
 header-subtitle-zoom: 120%
 header-position: 35% center
+header-height: 88vh
 ---
 
-#Family Migration Stories
+<div class="home-intro" markdown="1">
 
-For US Immigration History, students have collected oral histories about their families' migration stories. Using a template inspired by the University of Minnesota's Immigration History Research Center's Immigration Stories project [^citation] students have drawn on class themes and additional research to tell their family's migration stories. 
+For US Immigration History, students have collected oral histories about their families' migration stories. Using a template inspired by the University of Minnesota's Immigration History Research Center's Immigration Stories project,[^citation] students have drawn on class themes and additional research to tell their family's migration stories, each paired with a short clip of the interview itself.
 
-[^citation]: "Making an Immigrant Story with immigrantstories.umn.edu Curriculum for College Instructors," Immigration History Research Center, University of Minnesota.https://cla.umn.edu/ihrc/immigrant-stories 
+</div>
 
-The card grid below links to the sample essays. The info on these cards come from the essay pages themselves. As students publish their essaysm, these will showcase students' work as the project develops.
+[^citation]: "Making an Immigrant Story with immigrantstories.umn.edu Curriculum for College Instructors," Immigration History Research Center, University of Minnesota. [https://cla.umn.edu/ihrc/immigrant-stories](https://cla.umn.edu/ihrc/immigrant-stories)
 
-{% assign all_pages = site.pages %}
-{% assign cards = all_pages | where_exp: "p", "p.path contains 'essays/'" | where_exp: "p", "p.path != 'essays/index.md'" %}
+<p class="section-heading">The Stories</p>
 
-{% include cards/card-grid.html cards=cards %}
+{% include cards/essay-grid.html %}
 
+The cards above link to the essays. They are created automatically from each essay page, so new student work appears here as soon as it is published.

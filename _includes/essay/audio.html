@@ -1,0 +1,30 @@
+{% comment %}
+  Essay Audio - an MP3 clip from the oral history, with caption and citation.
+
+  Usage:
+    {% include essay/audio.html
+      file="audio/oral-history-clip.mp3"
+      caption="Interviewee name describes ... Interview by Student Name, City, date."
+    %}
+
+  Parameters:
+    file     - path to the MP3 (required). Relative to your essay folder, or
+               start with / for a path from the site root.
+    caption  - 10-25 words describing and citing the clip
+    label    - small heading above the player (default: "Listen")
+{% endcomment %}
+
+{% capture audio_url %}{% include helpers/image-path.html image-path=include.file %}{% endcapture %}
+{% assign audio_url = audio_url | strip %}
+
+{::nomarkdown}
+{% if audio_url != '' %}
+<figure class="essay-media">
+  <p class="essay-media__label"><i class="fa-solid fa-headphones" aria-hidden="true"></i> {{ include.label | default: 'Listen' }}</p>
+  <audio controls preload="metadata" src="{{ audio_url }}">Your browser does not support audio playback.</audio>
+  {% if include.caption %}<figcaption>{{ include.caption | markdownify }}</figcaption>{% endif %}
+</figure>
+{% else %}
+<div class="xanthan-warning">essay/audio needs a file="..." path.</div>
+{% endif %}
+{:/nomarkdown}

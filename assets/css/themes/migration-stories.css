@@ -1,0 +1,141 @@
+/* === Migration Stories Theme === */
+/*
+  Warm, scholarly palette built on:
+    #D7CEC7 (stone)   #565656 (graphite)   #76323F (burgundy)   #C09F80 (tan)
+
+  Loaded last (see theme_css in _config.yml), so every value here wins over
+  base.css. Fonts are imported here too, which is why the theme beats Xanthan's
+  default fonts.
+
+  Fonts:
+    Newsreader     - headings and essay reading text (editorial serif)
+    Inter          - navigation, cards, captions, interface text
+    IBM Plex Mono  - small kicker labels
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ===== Palette ===== */
+  --stone: #D7CEC7;
+  --stone-light: #EFE8E2;
+  --cream: #FAF6F1;
+  --graphite: #565656;
+  --ink: #2E2625;
+  --burgundy: #76323F;
+  --burgundy-deep: #4E1F29;
+  --burgundy-night: #2A1519;
+  --tan: #C09F80;
+  --tan-dark: #86664A;
+
+  /* ===== Xanthan's built-in green/gold names, remapped =====
+     base.css and several components use these names directly, so remapping
+     them is what removes every trace of the default green. */
+  --sage-pale: var(--stone);
+  --sage: var(--burgundy);
+  --sage-deep: var(--burgundy-deep);
+  --sage-dark: var(--burgundy-night);
+  --warm-white: var(--cream);
+  --warm-light: var(--stone-light);
+  --golden-clay: var(--tan);
+  --golden-clay-dark: var(--tan-dark);
+  --amber: var(--tan);
+  --trail-red: var(--burgundy);
+
+  /* ===== Backgrounds ===== */
+  --bg-page: var(--cream);
+  --bg-card: var(--stone-light);
+  --bg-code: var(--stone-light);
+  --bg-nav: var(--burgundy-night);
+  --bg-page-header: var(--burgundy-night);
+  --bg-footer: var(--graphite);
+  --bg-footer-bottom: var(--burgundy-night);
+  --bg-feature-band: var(--burgundy-deep);
+
+  /* ===== Text ===== */
+  --text-body: var(--ink);
+  --text-muted: var(--graphite);
+  --text-on-dark: var(--cream);
+  --text-footer-link: var(--cream);
+  --text-footer-bottom: var(--stone);
+
+  /* ===== Headings ===== */
+  --text-h1: var(--burgundy);
+  --text-h2: var(--burgundy);
+  --text-h3: var(--graphite);
+  --text-h4: var(--ink);
+  --text-h5: var(--tan-dark);
+
+  /* ===== Accents ===== */
+  --accent-primary: var(--burgundy);
+  --accent-border: var(--tan);
+  --accent-primary-dark: var(--burgundy-deep);
+  --interactive-hover: var(--burgundy-deep);
+  --interactive-hover-bg: var(--burgundy-deep);
+  --border-light: rgba(86, 86, 86, 0.18);
+
+  /* Status colors that were pure green/yellow */
+  --success: #4f6b4a;
+  --info: var(--tan-dark);
+  --warning-bg: #f6ead8;
+
+  /* ===== Fonts ===== */
+  --font-heading: 'Newsreader', Georgia, serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Consolas', monospace;
+
+  /* Slightly softer shadows */
+  --shadow-lg: 0 10px 30px rgba(42, 21, 25, 0.14);
+}
+
+/*****************************************************
+Hard-coded values elsewhere in Xanthan that variables can't reach
+*****************************************************/
+
+/* The decorative quote mark in pullquotes is hard-coded to Georgia */
+.pullquote::before {
+  font-family: var(--font-serif);
+}
+
+/* Headings read better a touch tighter and lighter in a serif */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Hero header: warm the image instead of the default cool grey wash */
+.page-header-bg {
+  opacity: 0.4;
+}
+.page-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, rgba(42, 21, 25, 0.85) 0%, rgba(118, 50, 63, 0.35) 55%, rgba(42, 21, 25, 0.15) 100%);
+  z-index: 5;
+  pointer-events: none;
+}
+.page-header-bar {
+  background: var(--tan);
+}
+.page-header .page-header-eyebrow {
+  color: #E3C9A8 !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+.page-header .page-header-divider span {
+  color: #E3C9A8 !important;
+}
+.page-header .page-header-divider-line {
+  background: rgba(227, 201, 168, 0.6) !important;
+}
+.page-header p {
+  font-family: var(--font-body);
+  color: rgba(250, 246, 241, 0.88);
+}
+
+/* Visible keyboard focus in the new palette */
+:focus-visible {
+  outline: 3px solid var(--tan);
+  outline-offset: 2px;
+}

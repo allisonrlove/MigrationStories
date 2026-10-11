@@ -1,0 +1,24 @@
+{% comment %}
+  Essay Grid - shows a story card for every student essay automatically.
+
+  Usage (already placed on the home page and essays page):
+    {% include cards/essay-grid.html %}
+
+  A page appears here if it lives in essays/<folder>/index.md and has a title.
+  The template folder and the essays index page are skipped.
+  To hide an unfinished essay, add   draft: true   to its front matter.
+{% endcomment %}
+
+{% assign essay_pages = site.pages | where_exp: "p", "p.path contains 'essays/'" | where_exp: "p", "p.path != 'essays/index.md'" | where_exp: "p", "p.path != 'essays/template/index.md'" | where_exp: "p", "p.draft != true" | where_exp: "p", "p.title" | sort: "position" %}
+
+{::nomarkdown}
+{% if essay_pages.size > 0 %}
+<div class="story-grid">
+  {% for essay in essay_pages %}
+    {% include cards/story-card.html card=essay %}
+  {% endfor %}
+</div>
+{% else %}
+<p>No essays have been published yet.</p>
+{% endif %}
+{:/nomarkdown}

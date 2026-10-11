@@ -1,0 +1,40 @@
+{% comment %}
+  Essay Video - a YouTube clip from the oral history, with caption and citation.
+
+  Usage:
+    {% include essay/video.html
+      url="https://www.youtube.com/watch?v=XXXXXXXXXXX"
+      caption="Interviewee name describes ... Interview by Student Name, City, date."
+    %}
+
+  Parameters:
+    url      - the YouTube link as copied from the address bar or Share button
+               (watch?v=, youtu.be/ and embed/ links all work)
+    caption  - 10-25 words describing and citing the clip
+    label    - small heading above the video (default: "Watch")
+{% endcomment %}
+
+{% assign u = include.url | default: '' | strip %}
+{% if u contains 'youtu.be/' %}
+  {% assign yt_id = u | split: 'youtu.be/' | last | split: '?' | first %}
+{% elsif u contains '/embed/' %}
+  {% assign yt_id = u | split: '/embed/' | last | split: '?' | first %}
+{% elsif u contains 'v=' %}
+  {% assign yt_id = u | split: 'v=' | last | split: '&' | first %}
+{% else %}
+  {% assign yt_id = u %}
+{% endif %}
+
+{::nomarkdown}
+{% if yt_id != '' %}
+<figure class="essay-media">
+  <p class="essay-media__label"><i class="fa-solid fa-video" aria-hidden="true"></i> {{ include.label | default: 'Watch' }}</p>
+  <div class="essay-media__video">
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ yt_id }}" title="Oral history clip" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  {% if include.caption %}<figcaption>{{ include.caption | markdownify }}</figcaption>{% endif %}
+</figure>
+{% else %}
+<div class="xanthan-warning">essay/video needs a url="..." YouTube link.</div>
+{% endif %}
+{:/nomarkdown}

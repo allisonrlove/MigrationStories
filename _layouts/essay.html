@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include html/html-head.html %}
+
+  <body>
+
+    {% include nav/skip-link.html %}
+
+    <div class="page-wrap">
+
+    {% include nav/nav-top.html %}
+
+    <main id="main">
+    <div class="container">
+
+      <header class="essay-header">
+        <p class="essay-kicker">Migration Story{% if page.kicker %} &middot; {{ page.kicker }}{% endif %}</p>
+        <h1 class="essay-title">{{ page.title }}</h1>
+        {% if page.summary %}<p class="essay-dek">{{ page.summary }}</p>{% endif %}
+        {% if page.student %}
+        <p class="essay-byline">By <strong>{{ page.student }}</strong>{% if page.course %} &middot; {{ page.course }}{% endif %}</p>
+        {% endif %}
+      </header>
+
+      {% assign lead = page.lead-image | default: page.thumbnail %}
+      {% if lead %}
+        {% capture lead_url %}{% include helpers/image-path.html image-path=lead %}{% endcapture %}
+        <figure class="essay-figure essay-figure--{{ page.lead-image-size | default: 'medium' }} essay-figure--lead">
+          <img src="{{ lead_url | strip }}" alt="{{ page.lead-image-alt | default: page.lead-image-caption | strip_html | escape }}">
+          {% if page.lead-image-caption %}<figcaption>{{ page.lead-image-caption | markdownify }}</figcaption>{% endif %}
+        </figure>
+      {% endif %}
+
+      <article class="essay-body">
+        {{ content }}
+      </article>
+
+      <p class="essay-footer-nav"><a href="{{ '/essays/' | relative_url }}">&larr; Back to all stories</a></p>
+
+    </div> <!-- /container -->
+    </main>
+
+    {% include layout/footer.html %}
+
+    {% include nav/search.html %}
+
+    </div> <!-- /page-wrap -->
+
+    {% include google_analytics.html %}
+
+    {% include html/html-js.html %}
+
+  </body>
+</html>

@@ -1,0 +1,38 @@
+{% comment %}
+  Story Card - a clean, editorial card for one essay.
+  Used by cards/essay-grid.html. Students never need to edit this.
+
+  Reads these front matter fields from the essay page:
+    title      - essay title
+    thumbnail  - card image (falls back to lead-image)
+    kicker     - short label, e.g. "Oaxaca to Los Angeles"
+    summary    - one-sentence summary
+    student    - student name shown at the bottom
+  Optional: thumbnail-position, thumbnail-zoom
+{% endcomment %}
+
+{% assign card_image = include.card.thumbnail | default: include.card.lead-image %}
+{% assign card_summary = include.card.summary | default: include.card.excerpt | strip_html | truncate: 170 %}
+{% capture card_href %}{% include helpers/link-path.html link=include.card.url %}{% endcapture %}
+{% assign thumb_pos = include.card.thumbnail-position | default: 'center' %}
+
+<article class="story-card">
+  <a class="story-card__link" href="{{ card_href | strip }}">
+    {% if card_image %}
+      {% capture card_image_url %}{% include helpers/image-path.html image-path=card_image page-dir=include.card.dir %}{% endcapture %}
+      <div class="story-card__media">
+        <img src="{{ card_image_url | strip }}" alt="" loading="lazy"
+          style="object-position: {{ thumb_pos }};{% if include.card.thumbnail-zoom %} --thumb-zoom: {{ include.card.thumbnail-zoom }}; transform-origin: {{ include.card.thumbnail-origin | default: thumb_pos }};{% endif %}">
+      </div>
+    {% endif %}
+    <div class="story-card__body">
+      <p class="story-card__kicker">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+        <span>Essay{% if include.card.kicker %} <span class="sep">/</span> {{ include.card.kicker }}{% endif %}</span>
+      </p>
+      <h3 class="story-card__title">{{ include.card.title }}</h3>
+      <p class="story-card__summary">{{ card_summary }}</p>
+      {% if include.card.student %}<p class="story-card__byline">{{ include.card.student }}</p>{% endif %}
+    </div>
+  </a>
+</article>
