@@ -41,7 +41,7 @@ Open `index.md` in your folder. At the very top, between the two lines of dashes
 |---|---|
 | `title` | The title of your project |
 | `student` | Your name |
-| `kicker` | A short label for the home page card, like "Oaxaca to Los Angeles" |
+| `kicker` | A short label for the home page card, like "Village to City" |
 | `summary` | One sentence about your story |
 | `lead-image` | The file name of your main image |
 | `lead-image-alt` | A short description of the image for people using screen readers |
@@ -49,16 +49,26 @@ Open `index.md` in your folder. At the very top, between the two lines of dashes
 
 ## Step 4: Write your essay
 
-Replace each paragraph with your own writing. Keep the lines that start with `##`; change the words after them to your own subheaders. The template shows the word count for each section.
+Your essay has the same parts, in the same order, as the template. Replace each paragraph with your own writing. Keep the lines that start with `##`, but change the words after them to your own subheaders. Anything inside a `{% raw %}{% include ... %}{% endraw %}` block is a picture, audio clip, or video; you only change the text inside the quotation marks.
 
-| Section | Length |
-|---|---|
-| Introduction | 100-120 words |
-| Subheader 1 (historical context) | 4-8 words; paragraph 150-250 words |
-| Subheader 2 (personal context) with audio or video | Caption 10-25 words |
-| Subheader 3 (the oral history as a whole) | Paragraph 300-350 words; image caption 20-30 words |
-| Subheader 4 (other migration stories) | Paragraph 125-175 words; image caption 20-30 words |
-| Concluding subheader | Final paragraph 70-85 words |
+| Order | Part | What to write | Length |
+|---|---|---|---|
+| 1 | **Title** | The title of your project. It goes in the `title` line at the top. | Short and specific |
+| 2 | **Lead image** | One high-quality, small-ish photograph or object that introduces your family. Set in the top lines (`lead-image`). The caption must cite the source. | Caption: one or two lines |
+| 3 | **Introduction** | Introduce your family: who they are, where they came from, where they went, and when. | 100-120 words |
+| 4 | **Subheader 1: Historical context and impacts** | A short subheader, then a paragraph that connects your family's story to larger history using secondary sources from class. Cite them in Chicago style. | Subheader 4-8 words; paragraph 150-250 words |
+| 5 | **Subheader 2: Personal context** | A subheader, then your 1-2 minute audio (MP3) or video (YouTube) clip from the oral history, with a caption and citation. | Caption 10-25 words |
+| 6 | **Subheader 3: The oral history as a whole** | Describe the journey as a whole, the family, one important object, and questions of identity and place. Follow it with a second image and citation. | Paragraph 300-350 words; image caption 20-30 words |
+| 7 | **Subheader 4: Other migration stories** | Compare your family's story with others from class, then add a third image and citation. | Paragraph 125-175 words; image caption 20-30 words |
+| 8 | **Concluding subheader** | Reflect on what you learned about your family, migration, and history. | Final paragraph 70-85 words |
+| 9 | **References** | List your oral history interview and the secondary sources you cited. | Chicago style |
+
+Tips:
+
+- Write your words in the template's paragraphs, directly under each subheader. Do not move or delete the picture, audio, and video blocks; just edit them.
+- Your lead image and the other images should be sharp and well lit. Always say where each one came from.
+- The summary you wrote in Step 3 appears under your title and on your card on the home page, so keep it to one clear sentence.
+- To see how finished essays look, open any of the sample essays on the Essays page. They are placeholders only, so replace everything with your own work.
 
 ## Step 5: Add your pictures
 

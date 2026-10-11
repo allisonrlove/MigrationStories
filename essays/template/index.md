@@ -13,7 +13,7 @@ title: "Template: Your Family Migration Story"
 student: "Your Name"
 course: "US Immigration History, Fall 2026"
 
-# Small label on the home page card, e.g. "Oaxaca to Los Angeles"
+# Small label on the home page card, e.g. "Village to City"
 kicker: "Place to Place"
 
 # One sentence that appears on the home page card and under the title
