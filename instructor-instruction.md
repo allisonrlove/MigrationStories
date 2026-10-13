@@ -3,6 +3,7 @@ title: Instructions for Instructors
 layout: base
 header-image: "/assets/images/immigration_collage.jpg"
 header-tier: banner
+permalink: /instructors
 header-title: Instructions for Instructors
 header-position: 35% center
 ---
