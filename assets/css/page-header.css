@@ -17,6 +17,8 @@ Editing guide:
   - Colors:   Edit the page-header variables in assets/css/base.css
   - Tiers:    Scroll to "Tier" sections to adjust heights and spacing
   - Filters:  Scroll to "Filter system" to adjust image treatments
+  - To raise or lower the position of something add "position: relative; top: 2rem"
+    - the "top" part can be changed to "bottom" and the "2rem" can be changed to any value, negative or positive
 
 The accent color (vertical bar + eyebrow text) comes from --accent-primary in
 base.css. Override it here inside .page-header if you want a different accent
