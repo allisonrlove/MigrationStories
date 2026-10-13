@@ -1,17 +1,18 @@
 ---
 title: "Template: Your Family Migration Story"  #Replace with title of your final project
 layout: default
-header-image: images/figure_1.jpg #Be sure to upload the .jpg or .png you have chosen for the primary image for your story under "images" within your final project folder. Copy and paste the .jpg or .png file title here and below for the thumbnail. 
-thumbnail: images/figure_1.jpg
-summary: How a Mesoamerican crop became the defining flavor of the American Southwest—and why one plant changed everything. #Replace this summary with your one sentence summary of your family migration story. 
+header-image: images/QZChina.jpg #Be sure to upload the .jpg or .png you have chosen for the primary image for your story under "images" within your final project folder. Copy and paste the .jpg or .png file title here and below for the thumbnail. 
+thumbnail: images/QZChina.jpg
+summary: From a small southern Chinese village to metropolitan Chicago: one family's hard work to find Gold Mountain. #Replace this summary with your one sentence summary of your family migration story. 
 ---
 
 # "Template: Your Family Migration Story" 
   
   <!-- Use the same title that you used above for this intro section-->
 
+In the early 1930s, my grandfather QZ Fong left his wife and infant son for the United States. Due to China's political and economic instability, he and his four brothers departed for the United States to make new lives for their families. Initially prevented from becoming a U.S. citizen due to Chinese Exclusion laws, QZ began a laundry in the West side of Chicago, through which he would support additional family and village members' chain migration to the States.  After his wife See Chew joined him in the US, they would raise their eight children in the back of the laundry, see their church leave the city due to White Flight, and navigate the class politics of Chinatown. Their children who remained in Chicago would continue working for QZ's laundry even as they pursued educational opportunities. 
 
-Replace this text with your 2-3 sentence introduction to your family migration story. Identify the 3 key elements of this story major events, historical developments, and/or objects (WHEN WHERE WHAT WHO), that illustrate WHY AND HOW your famiy's migration story relates to US history and patterns of migration in US history. This is your overall thesis for your family migration story.  Try to use accessible language that a high schooler can understand. 100-150 words. 
+Replace this text with your 2-4 sentence introduction to your family migration story. Identify the 3 key elements of this story major events, historical developments, and/or objects (WHEN WHERE WHAT WHO), that illustrate WHY AND HOW your famiy's migration story relates to US history and patterns of migration in US history. This is your overall thesis for your family migration story.  Try to use accessible language that a high schooler can understand. 100-150 words. 
 
 
 ## SUBHEADER 1 that frames historical context and impacts
