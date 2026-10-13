@@ -202,85 +202,70 @@ Add the entry in the place you want it to appear, keeping the same spacing and i
 
 ## 7. Use the `_includes` folder
 
-An **include** is a reusable component. Instead of writing all the code for an image, audio player, or layout element on every page, Xanthan lets you insert a component that already exists.
+An **include** is a reusable piece of a website. It lets you place a component—such as a card, image with a caption, audio player, quotation, or callout—on a page without copying all of the component's HTML into every page. Includes are especially useful when many pages should share the same design.
 
-Most instructors should **use existing includes rather than edit the files inside `_includes/`**. The component's file contains the underlying code; the page contains the settings that tell it what to display. Editing an include can change that component everywhere it is used.
+There are two common ways to work with includes:
 
-For example, a template may use an image include like this:
+- **Use an existing include.** Find an example in the project or its documentation, copy the include call, and change the values supplied to it. This is usually the best option for instructors and beginners.
+- **Create or edit an include.** Do this when you need a reusable component that the project does not already provide, or when you intentionally want to change how an existing component works. This requires editing HTML/Liquid and may affect every page that uses the component.
+
+### How to use an existing include
+
+An include is usually stored as an HTML file inside `_includes/`. The file contains the component's structure. A page calls it with Liquid syntax and can pass in values—often called *parameters*—such as an image path, title, caption, or destination link.
+
+For example, an image include might be used like this:
 
 ```liquid
 {% raw %}{% include images/figure.html
-  image-path="/assets/images/class-photo.jpg"
-  caption="Caption and source information"
+  image-path="/assets/images/example.jpg"
+  caption="Image caption and source"
 %}{% endraw %}
 ```
 
-This is an example of Xanthan include syntax. The exact file name and parameters vary by component and template, so copy a working example from your own project or the [Component Library](https://xanthan-web.github.io/docs/reference/component-library). Change only the parameter values you need, such as the image path or caption.
+This is an illustrative example, not a guarantee that a file with this exact name or these exact parameters exists in every project. The include name and accepted parameters depend on the component. Find a working example in your own repository or consult the component's documentation before using it. Change the parameter values, but keep the include name and syntax intact.
 
-The folders inside `_includes/` help you identify what a component does. In this project, for example, `cards/` contains components for displaying essay cards, `images/` contains image components, `media/` contains media components, and `nav/` contains navigation components.
+### Example: display an essay as a card
 
-### Example: display essay cards
+A **card** is a compact preview of a page or item. It often contains a thumbnail, title, short description, and link to the full content. A grid of cards can help readers browse a collection of essays, student projects, artworks, or resources.
 
-This project includes a ready-made essay card system. It can display a grid of essay cards without you writing the HTML for each card. The main pieces are:
+First, check whether your project already has a card include. Look inside `_includes/` for files or folders with names such as `card`, `cards`, or `grid`, and search the existing pages for `{% raw %}{% include{% endraw %}` calls that use them. Read the component's comments and copy its working example. Existing card components may get their information from page front matter, a data file, or parameters supplied directly in the include call; use the method that your project already supports.
 
-- `_includes/cards/essay-grid.html` gathers eligible essay pages and arranges them in a grid.
-- `_includes/cards/story-card.html` controls the design and content of each individual essay card.
-
-**In most cases, you do not need to edit either include.** Instead, add an essay page and fill in its front matter; the grid will use that information to build the card.
-
-**Step 1: Create an essay page.** In the GitHub browser editor, open the `essays/` folder and create a folder for the essay, then create `index.md` inside it. For example:
-
-```text
-essays/
-  climate-and-memory/
-    index.md
-```
-
-**Step 2: Add front matter to `index.md`.** Front matter is the information between the two sets of three dashes at the top of a Markdown file. Use the field names that this project's card include expects:
-
-```yaml
----
-title: "Climate and Memory"
-layout: base
-permalink: /essays/climate-and-memory/
-position: 3
-thumbnail: images/climate-memory.jpg
-thumbnail-position: center
-kicker: "Landscape and Change"
-summary: "An essay about memory, landscape, and environmental change."
-student: "Student Name"
----
-```
-
-Replace the example values with your essay's information. Make sure the image path matches a real image in your repository. `position` controls the card's order relative to other essays; use a different number for each essay when you want a predictable order. `thumbnail-position` adjusts which part of the image appears in the card (for example, `center`, `top`, or `center 30%`). `kicker`, `summary`, and `student` are optional card details. The essay's actual writing goes below the closing `---`, in Markdown.
-
-**Step 3: Add the image.** Upload the thumbnail to the repository using **Add file → Upload files**. The example path `images/climate-memory.jpg` is relative to the essay page's folder in this template, so for the example above the image would be located at `essays/climate-and-memory/images/climate-memory.jpg`. If your image is stored somewhere else, change `thumbnail` to the correct path and follow the path conventions used by nearby working essays.
-
-**Step 4: Check where the grid appears.** The template's homepage and essays index may already contain this include:
+For a general illustration, imagine that a project has an include called `_includes/cards/content-card.html` that accepts four parameters: `title`, `summary`, `image`, and `url`. A page could call it like this:
 
 ```liquid
-{% raw %}{% include cards/essay-grid.html %}{% endraw %}
+{% raw %}{% include cards/content-card.html
+  title="An Essay Title"
+  summary="A short preview of the essay."
+  image="/assets/images/essay-thumbnail.jpg"
+  url="/essays/example-essay/"
+%}{% endraw %}
 ```
 
-If the grid is already on the page, do not add it a second time. If you want an essay grid on another page, add the include where you want the grid to appear in that page's source. Use the same Liquid syntax shown above.
+**This is a teaching example only.** The file `cards/content-card.html` and its parameter names will not work unless you create that component or your project already provides a matching one. Do not paste this example into a page without checking the actual include available in your repository.
 
-**Step 5: Publish and check the result.** Commit your changes to GitHub, wait for GitHub Pages to rebuild the site, and open the published page. The new essay should appear in the grid automatically if its page is inside `essays/`, has a `title`, and does not have `draft: true`. The essay template and `essays/index.md` are excluded from the grid.
+To show several cards, a project might use a grid include that reads a collection of pages or data records and creates one card for each item. The exact setup varies: some projects use one include call for the whole grid, while others call a card include repeatedly. Check the existing component and its documentation to learn how it expects the items to be provided. If each essay page supplies its own title, summary, image, and URL through front matter, the grid may be designed to read those values automatically—avoid duplicating them in a second location unless the component requires it.
 
-To keep an essay page out of the grid while you are still working on it, add `draft: true` to its front matter. Remove that line when the essay is ready to appear. This hides it from this card grid; it is not a substitute for checking any other publication or access settings your course uses.
+When setting up cards, check that:
 
-If the card appears without an image or summary, check the front-matter spelling, confirm the image path and capitalization, and compare the page with a working essay. To change the visual design of every story card, an instructor comfortable with HTML/CSS can inspect `story-card.html` and the related card styles—but changing that include affects all cards that use it.
+- The title and summary are accurate and short enough to fit the design.
+- The thumbnail file exists and its path and capitalization match exactly.
+- The link points to the correct page URL.
+- The card's parameter names match the include's expected names exactly.
+- The layout still works on a narrow/mobile screen and the text is readable.
 
-### When should you edit an include itself?
+### When should you edit or create an include?
 
-Only consider editing an include when you want to change how that component works or looks **everywhere it is used**. Before editing it:
+Only edit an existing include when you want to change how that component works or looks wherever it is used. Before making changes:
 
-1. Find the include's name in the page, then locate the matching file under `_includes/`.
-2. Read the comments in the file. They may explain the available settings and expected format.
-3. Search for other pages using the same include so you understand what else could change.
-4. Make a copy of the original or use GitHub's version history before making substantial edits.
-5. Test every page that uses the component after publishing.
+1. Locate the include file under `_includes/` and read any comments at the top.
+2. Search the repository for pages that use it so you know what may be affected.
+3. Make a copy of the original or use GitHub's version history so you can undo the change.
+4. Make one small change at a time.
+5. Check every page that uses the component after publishing.
 
-Many files contain comments or instructions near the top. Read these before changing anything. If a file says it is a helper or internal component, leave it alone unless you understand why it needs to change.
+If you create a new include, give it a clear file name, decide which parameters it needs, and add comments explaining those parameters. Then test it on a simple page before using it across the site. Remember that an include is HTML/Liquid code, so missing quotation marks, braces, or Liquid closing tags can prevent the page from building correctly.
+
+For Xanthan-specific component examples and supported options, consult the [Component Library](https://xanthan-web.github.io/docs/reference/component-library). The same general principle applies in other Jekyll projects: inspect the components already provided, follow their expected inputs, and test before using them widely.
 
 ## 8. Customize the design in `assets/css/`
 
