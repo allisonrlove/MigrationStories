@@ -134,7 +134,7 @@ color just for headers.
   top: 0;
   left: 0;
   right: 0;
-  height: 110px;
+  height: 100px;
   background: linear-gradient(to bottom, var(--page-header-top-scrim), transparent);
   z-index: 6;
   pointer-events: none;
