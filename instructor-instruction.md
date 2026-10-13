@@ -3,7 +3,6 @@ title: Instructions for Instructors
 layout: base
 header-image: "/assets/images/immigration_collage.jpg"
 header-tier: banner
-permalink: /instructors
 header-title: Instructions for Instructors
 header-position: 35% center
 ---
@@ -217,7 +216,58 @@ For example, a template may use an image include like this:
 
 This is an example of Xanthan include syntax. The exact file name and parameters vary by component and template, so copy a working example from your own project or the [Component Library](https://xanthan-web.github.io/docs/reference/component-library). Change only the parameter values you need, such as the image path or caption.
 
-The folders inside `_includes/` help you identify what a component does. For example, `images/` contains image components, `media/` may contain audio components, `nav/` contains navigation components, and `typography/` contains text treatments. Your template may organize these differently.
+The folders inside `_includes/` help you identify what a component does. In this project, for example, `cards/` contains components for displaying essay cards, `images/` contains image components, `media/` contains media components, and `nav/` contains navigation components.
+
+### Example: display essay cards
+
+This project includes a ready-made essay card system. It can display a grid of essay cards without you writing the HTML for each card. The main pieces are:
+
+- `_includes/cards/essay-grid.html` gathers eligible essay pages and arranges them in a grid.
+- `_includes/cards/story-card.html` controls the design and content of each individual essay card.
+
+**In most cases, you do not need to edit either include.** Instead, add an essay page and fill in its front matter; the grid will use that information to build the card.
+
+**Step 1: Create an essay page.** In the GitHub browser editor, open the `essays/` folder and create a folder for the essay, then create `index.md` inside it. For example:
+
+```text
+essays/
+  climate-and-memory/
+    index.md
+```
+
+**Step 2: Add front matter to `index.md`.** Front matter is the information between the two sets of three dashes at the top of a Markdown file. Use the field names that this project's card include expects:
+
+```yaml
+---
+title: "Climate and Memory"
+layout: base
+permalink: /essays/climate-and-memory/
+position: 3
+thumbnail: images/climate-memory.jpg
+thumbnail-position: center
+kicker: "Landscape and Change"
+summary: "An essay about memory, landscape, and environmental change."
+student: "Student Name"
+---
+```
+
+Replace the example values with your essay's information. Make sure the image path matches a real image in your repository. `position` controls the card's order relative to other essays; use a different number for each essay when you want a predictable order. `thumbnail-position` adjusts which part of the image appears in the card (for example, `center`, `top`, or `center 30%`). `kicker`, `summary`, and `student` are optional card details. The essay's actual writing goes below the closing `---`, in Markdown.
+
+**Step 3: Add the image.** Upload the thumbnail to the repository using **Add file → Upload files**. The example path `images/climate-memory.jpg` is relative to the essay page's folder in this template, so for the example above the image would be located at `essays/climate-and-memory/images/climate-memory.jpg`. If your image is stored somewhere else, change `thumbnail` to the correct path and follow the path conventions used by nearby working essays.
+
+**Step 4: Check where the grid appears.** The template's homepage and essays index may already contain this include:
+
+```liquid
+{% raw %}{% include cards/essay-grid.html %}{% endraw %}
+```
+
+If the grid is already on the page, do not add it a second time. If you want an essay grid on another page, add the include where you want the grid to appear in that page's source. Use the same Liquid syntax shown above.
+
+**Step 5: Publish and check the result.** Commit your changes to GitHub, wait for GitHub Pages to rebuild the site, and open the published page. The new essay should appear in the grid automatically if its page is inside `essays/`, has a `title`, and does not have `draft: true`. The essay template and `essays/index.md` are excluded from the grid.
+
+To keep an essay page out of the grid while you are still working on it, add `draft: true` to its front matter. Remove that line when the essay is ready to appear. This hides it from this card grid; it is not a substitute for checking any other publication or access settings your course uses.
+
+If the card appears without an image or summary, check the front-matter spelling, confirm the image path and capitalization, and compare the page with a working essay. To change the visual design of every story card, an instructor comfortable with HTML/CSS can inspect `story-card.html` and the related card styles—but changing that include affects all cards that use it.
 
 ### When should you edit an include itself?
 
