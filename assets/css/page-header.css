@@ -74,7 +74,7 @@ color just for headers.
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  height: 90%;
   padding: 3rem 5rem;
   margin-left: 3rem;
 }
@@ -134,7 +134,7 @@ color just for headers.
   top: 0;
   left: 0;
   right: 0;
-  height: 100px;
+  height: 120px;
   background: linear-gradient(to bottom, var(--page-header-top-scrim), transparent);
   z-index: 6;
   pointer-events: none;
