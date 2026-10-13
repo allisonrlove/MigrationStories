@@ -3,7 +3,7 @@ title: Instructions for Instructors
 layout: base
 header-image: "/assets/images/immigration_collage.jpg"
 header-tier: banner
-permalink: /instructors 
+permalink: /instructors
 header-title: Instructions for Instructors
 header-position: 35% center
 ---
@@ -41,19 +41,21 @@ Start with an existing Xanthan template rather than building the site from scrat
 
 Keep the original template as a reference. If you are unsure what a file does, compare it with the matching file in the template or consult the Xanthan documentation.
 
-## 2. Install and open Visual Studio Code on your computer
+## 2. Open Visual Studio Code in your browser through GitHub
 
-For editing files on your computer, use the desktop application **Visual Studio Code** (often called VS Code). It is different from the browser-based editor that opens when you press a period on GitHub.
+You do not need to install software or use the command line. You can edit your website in **Visual Studio Code for the Web**, which runs in your browser and opens your GitHub repository.
 
-1. Download and install [Visual Studio Code](https://code.visualstudio.com/).
-2. Download your repository from GitHub: click the green **Code** button, then choose **Download ZIP**.
-3. Extract the ZIP file. This creates a normal folder on your computer.
-4. In VS Code, choose **File → Open Folder…** and select the extracted project folder. The files and folders appear in the panel on the left.
-5. Click a file to open it. Make a small change, save it, and check that you can find the change in the editor.
+1. Sign in to [GitHub](https://github.com/) and open the repository you created from the Xanthan template.
+2. Press the period key (`.`) while viewing the repository. This should open the browser-based VS Code editor. If the shortcut does not work, try opening [github.dev](https://github.dev/) and selecting your repository, or use the repository's menu to open it in the web editor.
+3. In the left-hand file explorer, click a file such as `index.md` to open it. You can edit text just as you would in a basic text editor.
+4. To create a file, use the file explorer's **New File** icon. To create a folder, use **New Folder**. Give files and folders simple names, such as `course-resources.md` or `student-one`.
+5. To add an image or other media, return to the repository's regular GitHub page and choose **Add file → Upload files**. Upload the file into the folder where you want to keep it, then make sure the path in your Markdown or front matter matches its location and spelling.
+6. When you are ready to save your changes to GitHub, open the **Source Control** panel in the browser editor, enter a short message describing your changes, and choose **Commit & Push** or the available commit/publish option. If prompted to authorize or sign in, follow GitHub's instructions.
+7. Open the published website and check your changes. GitHub Pages may take a few minutes to rebuild the site after you commit changes.
 
-**Important:** Saving in VS Code changes the copy on your computer. To publish those changes, you must send them back to GitHub. One way is to use GitHub Desktop; another is to use Git in VS Code. If your course or institution has a preferred workflow, use that workflow. Do not edit files inside `_site/`; that folder contains generated output and is rebuilt automatically.
+**Important:** The browser editor changes files in your GitHub repository; you do not need to download the project or send files back from your computer. You generally cannot preview the complete Jekyll site locally from the browser editor, so check the published GitHub Pages site after each set of changes. If you do not see an update immediately, wait a few minutes and refresh the page.
 
-If you prefer not to download the project, GitHub's browser editor can make simple edits too. Open your repository and press the period key (`.`) to open the web editor, if that shortcut is available for your account.
+The browser editor is suitable for editing Markdown, YAML, and CSS files. If you are asked to make a change you do not understand, start with a small edit and keep a copy of the original code so you can undo the change if needed. Do not edit files inside `_site/`; that folder contains generated output and is rebuilt automatically.
 
 ## 3. Understand the folders
 
@@ -313,7 +315,7 @@ Many class templates already include an `instructions.md` file. Open it and adap
 - What text, images, audio, video, objects, citations, or other materials are required—and how many.
 - Which parts of the template they should replace, and which code or component blocks they should leave in place.
 - How to upload media and how to credit its source.
-- How to save and submit their changes.
+- How to commit and submit their changes through the GitHub browser editor.
 - What to do if something does not appear correctly.
 
 Use numbered steps and screenshots if helpful. Include a working example that students can copy. Avoid giving students unnecessary instructions for files they do not need to touch.
@@ -326,14 +328,15 @@ Once the website is ready, tell students to:
 
 1. Create or sign in to a **GitHub account**.
 2. Open the class website and select the **Instructions** tab.
-3. Follow the steps on that page to create or copy their page, enter their content, add any required media, and submit their work.
-4. Ask for help if they get stuck, including the step they were working on and any error message they see.
+3. Follow the steps on that page to create or copy their page, enter their content, and add any required media using the browser-based VS Code editor.
+4. Commit their changes to GitHub as directed by the instructions, then check the published page after the site rebuilds.
+5. Ask for help if they get stuck, including the step they were working on and any error message they see.
 
 Students should follow the instructions on **your class website**, not assume that every Xanthan site uses the same folders or template. Your instructions page is the authoritative guide for your assignment.
 
 ## 11. Preview, publish, and troubleshoot
 
-After editing, save your files and send the changes to GitHub using your chosen workflow. GitHub Pages will rebuild the site. Wait a few minutes, then refresh the live page. A hard refresh can help if the browser is showing an old version.
+After editing, commit your changes to GitHub from the browser editor. GitHub Pages will rebuild the site. Wait a few minutes, then refresh the live page. A hard refresh can help if the browser is showing an old version.
 
 If something is wrong, check these common causes:
 
