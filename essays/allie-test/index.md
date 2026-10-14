@@ -26,7 +26,7 @@ lead-image-alt: "Short description of the image for screen readers"
 lead-image-caption: "What the image shows, who is in it, and the source. Example: Maria and Jose Lopez outside their first apartment, Chicago, 1968. Courtesy of the Lopez family."
 
 # To hide an unfinished essay from the home page, remove the # in front of the next line
-draft: true
+# draft: true
 ---
 
 {% comment %}
