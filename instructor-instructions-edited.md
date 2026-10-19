@@ -8,32 +8,53 @@ header-title: Instructions for Instructors
 header-position: 35% center
 ---
 
+<style>
+  details { border: 1px solid #d8d4cc; border-radius: 8px; padding: 0.6rem 1rem; margin: 1rem 0; background: rgba(0,0,0,0.02); }
+  details[open] { padding-bottom: 0.5rem; }
+  summary { cursor: pointer; font-weight: 600; }
+  summary:hover { text-decoration: underline; }
+  blockquote { border-left: 4px solid #6b8e7f; background: rgba(107,142,127,0.08); padding: 0.6rem 1rem; border-radius: 0 6px 6px 0; }
+  h2 { margin-top: 2.5rem; }
+</style>
+
 # Build and edit your own class website with Xanthan
 
 This guide is for instructors who want to create a class website with the Xanthan framework. **You do not need any coding experience.** You will copy a starter site, change ordinary text files, and publish the result for free on GitHub.
 
 This guide is a companion to the [Xanthan documentation](https://xanthan-web.github.io/). The documentation explains every part of the framework; this guide walks you through the specific steps and decisions an instructor needs for a class project.
 
-**How to use this guide:** Start with **Plan your project**, then follow the steps in order. You can return to any section using the links below. You do not need to learn every feature before you begin.
+> **How to use this guide:** Start with **Plan your project**, then follow the steps in order. You can return to any section using the contents below. You do not need to learn every feature before you begin.
+>
+> 📂 Sections marked **"Click to expand"** hold extra detail, examples, and reference material. Open them only when you need them.
 
-1. [Plan your project](#plan-your-project)
-2. [Start from a template](#start-from-a-template)
-3. [Choose how to edit](#choose-how-to-edit)
-4. [Find your way around the files](#folders-and-files)
-5. [Edit pages and text](#edit-pages-with-indexmd-and-other-md-files)
-6. [Change a header image or position](#change-the-page-header)
-7. [Create pages and organize folders](#make-a-new-page)
-8. [Add images, cards, and other components](#use-the-_includes-folder)
-9. [Customize colors, fonts, and sizes](#change-the-look-with-assetscss)
-10. [Prepare the student Instructions page](#write-the-student-instructions-page)
-11. [Tell students how to begin](#what-to-tell-your-students)
-12. [Troubleshoot common problems](#check-your-work-and-fix-problems)
-13. [Words you will see](#words-you-will-see)
-14. [Useful Xanthan references](#useful-xanthan-references)
+## 📑 Contents
+{: #contents}
+
+| Step | Section |
+|:---:|---|
+| 1 | [Plan your project](#plan-your-project) |
+| 2 | [Start from a template](#start-from-a-template) |
+| 3 | [Choose how to edit](#choose-how-to-edit) |
+| 4 | [Find your way around the files](#folders-and-files) |
+| 5 | [Edit pages and text](#edit-pages-with-indexmd-and-other-md-files) |
+| 6 | [Change a header image or position](#change-the-page-header) |
+| 7 | [Create pages and organize folders](#make-a-new-page) |
+| 8 | [Add images, cards, and other components](#use-the-_includes-folder) |
+| 9 | [Customize colors, fonts, and sizes](#change-the-look-with-assetscss) |
+| 10 | [Prepare the student Instructions page](#write-the-student-instructions-page) |
+| 11 | [Tell students how to begin](#what-to-tell-your-students) |
+| 12 | [Troubleshoot common problems](#check-your-work-and-fix-problems) |
+| 📖 | [Words you will see](#words-you-will-see) |
+| 🔗 | [Useful Xanthan references](#useful-xanthan-references) |
+
+---
 
 ## Words you will see
 
 You do not need to memorize these. Come back here if a word is unfamiliar.
+
+<details markdown="1">
+<summary><strong>Click to expand: glossary of terms</strong></summary>
 
 | Word | What it means in plain language |
 |---|---|
@@ -48,35 +69,57 @@ You do not need to memorize these. Come back here if a word is unfamiliar.
 | **Push** | Sending your saved changes to GitHub so the live site updates. |
 | **Path** | The address of a file inside your site, such as `/assets/images/photo.jpg`. |
 
+</details>
+
+[↑ Back to contents](#contents)
+
+---
+
 ## Plan your project
 
 Before you touch the template, decide what you want the site to do and what you want it to look like. A short plan now can save time later. Your answers will also help you write the student-facing Instructions page.
 
 Use this checklist to make the main decisions before you build.
 
-**What is the site for?**
+<details markdown="1">
+<summary><strong>🎯 What is the site for?</strong></summary>
 
 - Will it showcase **objects** (artifacts, artworks, places), students' **writing**, or **both**?
 - Is it for your class only, for your campus, or for the **public**? Remember that a public site means student work can be found by anyone, so decide how you will handle student names, permissions, and privacy.
 
-**What will each student contribute?**
+</details>
+
+<details markdown="1">
+<summary><strong>✍️ What will each student contribute?</strong></summary>
 
 - Will every student have their **own page** (for example, an essay page)? Or will students add to one shared page?
 - Will students add **images**? How many (for example, exactly 3)?
 - Will students add **audio**, **video**, or a **map**?
 - How long should the writing be? Are captions, citations, image credits, or alt text (a written description of an image for people who can't see it) required?
 
-**How should it look and feel?**
+</details>
+
+<details markdown="1">
+<summary><strong>🎨 How should it look and feel?</strong></summary>
 
 - Rough colors, mood, and a header image you like.
 - How visitors will move around: a top menu, a homepage with cards linking to every student page, or both.
 
-**Who is responsible for what?**
+</details>
+
+<details markdown="1">
+<summary><strong>👥 Who is responsible for what?</strong></summary>
 
 - Which parts can students edit, and which should they leave alone so the site stays consistent?
 - What are the deadlines?
 
-A good habit: sketch the site on paper. Draw the homepage, one student page, and the menu. Then pick the template closest to your sketch.
+</details>
+
+> 💡 **A good habit:** sketch the site on paper. Draw the homepage, one student page, and the menu. Then pick the template closest to your sketch.
+
+[↑ Back to contents](#contents)
+
+---
 
 ## Start from a template
 
@@ -93,11 +136,16 @@ A template is a complete working website. You will make your own copy so you can
 
 **Tip:** Keep the original template open in another tab. If you ever break something, you can compare your file to the original.
 
+[↑ Back to contents](#contents)
+
+---
+
 ## Choose how to edit
 
 You can edit your site in a browser or use the desktop version of VS Code on your computer. **If you are new to this, start with the browser editor for small text changes. Use desktop VS Code if you plan to customize the design, manage lots of images, or work with many files.** Both approaches change the same website files.
 
-### Option A: Edit in your browser
+<details markdown="1">
+<summary><strong>Option A: Edit in your browser</strong> (no installation, best for small text changes)</summary>
 
 This option does not require installing software.
 
@@ -110,18 +158,21 @@ This option does not require installing software.
 
 The browser editor does not provide a full preview of your finished Xanthan site. Check the published website after each change. For bigger design changes, desktop VS Code is usually easier.
 
-### Option B: Edit on your computer with desktop VS Code
+</details>
+
+<details markdown="1">
+<summary><strong>Option B: Edit on your computer with desktop VS Code</strong> (more control for design and many files)</summary>
 
 The desktop version of VS Code is free and is the better choice when you want more control over the design. It makes it easier to manage folders and images, search across the site, and make coordinated changes to multiple files.
 
-### One-time setup
+#### One-time setup
 
 1. Install **[Visual Studio Code](https://code.visualstudio.com)**. Download it, open the installer, and accept the defaults.
 2. Install **[GitHub Desktop](https://desktop.github.com)**. Open it and sign in with your GitHub account.
 3. In GitHub Desktop choose **File → Clone repository**, pick your class site from the list, choose a place on your computer (such as Documents), and click **Clone**.
 4. In GitHub Desktop click **Open in Visual Studio Code**. Your whole site opens.
 
-### Everyday editing
+#### Everyday editing
 
 1. Open GitHub Desktop and click **Fetch origin** or **Pull origin** (this brings in any changes students have made).
 2. Click **Open in Visual Studio Code**.
@@ -129,7 +180,7 @@ The desktop version of VS Code is free and is the better choice when you want mo
 4. When you are happy, switch to GitHub Desktop. You will see a list of changed files. Type a short summary at the bottom left, click **Commit to main**, then click **Push origin**.
 5. Wait a few minutes and refresh the live site.
 
-### VS Code skills worth knowing
+#### VS Code skills worth knowing
 
 - **Find and replace everywhere:** press **Ctrl+Shift+F** (Windows) or **Cmd+Shift+F** (Mac) to search every file. This is the best way to find where a color, a word, or a setting lives.
 - **Open any file quickly:** press **Ctrl+P** (Cmd+P on Mac) and start typing the file name.
@@ -137,13 +188,24 @@ The desktop version of VS Code is free and is the better choice when you want mo
 - **Color previews:** VS Code shows a small colored square beside color codes in CSS files. Click it to pick a new color.
 - **Preview Markdown:** open an `.md` file and press **Ctrl+Shift+V** to see roughly how the text will look.
 
-### Optional: preview the site on your computer
+#### Optional: preview the site on your computer
 
 You can see changes instantly, before publishing, by running the site locally. This takes some extra setup, so skip it until you want it. Follow the [Working Locally guide](https://xanthan-web.github.io/docs/reference/working-locally).
 
+</details>
+
 ### AI helpers
 
+<details markdown="1">
+<summary><strong>Click to expand: getting help from an AI assistant</strong></summary>
+
 If a change feels intimidating, you can ask an AI assistant for help. Tell it which Xanthan template you use, exactly what you want to change, and paste the relevant file. Ask it to "make the smallest change necessary and keep my existing text." Always check the result on your site. See the [Xanthan AI guide](https://xanthan-web.github.io/docs/using-ai/).
+
+</details>
+
+[↑ Back to contents](#contents)
+
+---
 
 ## Folders and files
 
@@ -163,23 +225,31 @@ A folder is a container for related files, just like a folder on your computer. 
 | `assets/js/` | Scripts for interactive features. | Rarely |
 | `_config.yml` | Site-wide settings, such as the site title. | Occasionally |
 
-**Underscore rule:** folders that start with an underscore (`_includes`, `_data`, `_layouts`) are used by the system that builds your site. Do not rename them.
+> ⚠️ **Underscore rule:** folders that start with an underscore (`_includes`, `_data`, `_layouts`) are used by the system that builds your site. Do not rename them.
 
 ### Working with folders
+
+<details markdown="1">
+<summary><strong>Click to expand: create, rename, move, and upload</strong></summary>
 
 - **Create a folder:** in VS Code, right-click in the Explorer and choose **New Folder**. (On GitHub's own website, a folder is created by creating a file and typing the folder name followed by a slash, for example `my-folder/index.md`.)
 - **Create a file:** right-click a folder and choose **New File**. Include the extension, such as `course-resources.md`.
 - **Rename or move:** right-click and choose **Rename**, or drag the file to a new folder. If you move an image, update its path anywhere it is used (use Find in files to locate those places).
 - **Add images or audio:** drag them into the folder in VS Code (desktop), or on GitHub choose **Add file → Upload files**.
 
+</details>
+
 ### Naming rules that prevent most problems
 
 - Use **lowercase** letters, **numbers**, and **hyphens**. No spaces, accents, or special symbols.
-- Good: `oral-history-project.md`, `family-photo.jpg`
-- Avoid: `Oral History Project FINAL (2).md`, `Family Photo.JPG`
+- ✅ Good: `oral-history-project.md`, `family-photo.jpg`
+- ❌ Avoid: `Oral History Project FINAL (2).md`, `Family Photo.JPG`
 - Always include the file extension (`.md`, `.jpg`, `.mp3`) when you refer to a file, and match capitalization exactly.
 
 ### Example: one folder per student
+
+<details markdown="1">
+<summary><strong>Click to expand: sample folder layout</strong></summary>
 
 Many class templates give each student their own folder so their writing and media stay together:
 
@@ -203,9 +273,18 @@ student-pages/
 
 The folder name becomes part of the web address. `student-pages/student-one/index.md` appears at `your-site/student-pages/student-one/`. Follow your own template's structure.
 
+</details>
+
+[↑ Back to contents](#contents)
+
+---
+
 ## Instructions are hidden inside the folders
 
 Xanthan is built to explain itself. Many files contain notes written for you. Look for them before you change anything.
+
+<details markdown="1">
+<summary><strong>Click to expand: where to find the built-in notes</strong></summary>
 
 - **In `_includes/`:** each file begins with a note (between `{% raw %}{% comment %}{% endraw %}` and `{% raw %}{% endcomment %}{% endraw %}`) that lists what the building block does, a copy-and-paste **Usage** example, and every **Parameter** you can change.
 - **In `assets/css/`:** each CSS file begins with a comment box (between `/*` and `*/`) that says what the file controls and which other files relate to it.
@@ -213,7 +292,13 @@ Xanthan is built to explain itself. Many files contain notes written for you. Lo
 - **In `docs/`:** the site's own documentation pages (if your template includes them) cover navigation, colors and fonts, images, and troubleshooting.
 - **The Xanthan website:** [xanthan-web.github.io](https://xanthan-web.github.io/) has a page for every component.
 
-When you open a file you do not recognize, read the comment at the top first. It usually tells you exactly what you need.
+</details>
+
+> 💡 When you open a file you do not recognize, read the comment at the top first. It usually tells you exactly what you need.
+
+[↑ Back to contents](#contents)
+
+---
 
 ## Edit pages with index.md and other .md files
 
@@ -242,6 +327,9 @@ This is the page text.
 
 ### Markdown cheat sheet
 
+<details markdown="1">
+<summary><strong>Click to expand: Markdown cheat sheet</strong></summary>
+
 Type this on the left to get the result on the right.
 
 | You type | You get |
@@ -261,12 +349,18 @@ Type this on the left to get the result on the right.
 
 Leave a blank line between paragraphs, headings, and lists. If formatting looks wrong, a missing blank line is the most common cause.
 
+</details>
+
 ### Example: edit your homepage
 
 1. Open `index.md`.
 2. Change the words after `title:` and `header-title:` to your course name.
 3. Replace the sample paragraph under the front matter with your own welcome text.
 4. Save and commit. Refresh the live site to see the result.
+
+[↑ Back to contents](#contents)
+
+---
 
 ## Change the page header
 
@@ -286,6 +380,9 @@ header-position: center center
 
 ### Examples
 
+<details markdown="1">
+<summary><strong>Click to expand: header examples</strong></summary>
+
 **Make the banner taller or shorter:** change `header-tier: banner` to `header-tier: hero`, or the reverse.
 
 **Move the image so a face or object isn't cut off:**
@@ -301,7 +398,13 @@ header-position: 20% center       # shows more of its right side
 
 **Remove the banner:** delete the `header-` lines, or use a layout that has no banner. Check the [Pages and front matter guide](https://xanthan-web.github.io/docs/reference/pages-and-front-matter) for all available header settings.
 
-Anything after a `#` in front matter is a note to humans, and the site ignores it. You can add `#` in front of a line to switch it off without deleting it.
+</details>
+
+> 💡 Anything after a `#` in front matter is a note to humans, and the site ignores it. You can add `#` in front of a line to switch it off without deleting it.
+
+[↑ Back to contents](#contents)
+
+---
 
 ## Make a new page
 
@@ -341,6 +444,10 @@ The order of entries is the order of the menu. To remove a page from the menu, d
 
 If your template includes a student page template (a sample folder with an `index.md`, an `images` folder, and so on), students make their page by **copying that folder**, renaming the copy, and filling in the form at the top of `index.md`. Often the homepage or listing page then shows a card for each student page **automatically**, so you do not need to add them by hand. Check the comments in the template to see how yours works. To hide an unfinished page, look for a `draft: true` setting.
 
+[↑ Back to contents](#contents)
+
+---
+
 ## Use the _includes folder
 
 An **include** is a reusable building block. Instead of writing complicated code, you add a short line to your page and the include builds the card, image, audio player, or quotation for you.
@@ -371,6 +478,9 @@ Parts of this line:
 
 ### Example: put an image on a page
 
+<details markdown="1">
+<summary><strong>Click to expand: put an image on a page</strong></summary>
+
 Upload a picture to `assets/images/`. Then, on the page:
 
 ```liquid
@@ -386,7 +496,12 @@ Upload a picture to `assets/images/`. Then, on the page:
 - `caption` appears below the picture.
 - `alt-text` is read aloud by screen readers. Always include it.
 
+</details>
+
 ### Example: an image beside text
+
+<details markdown="1">
+<summary><strong>Click to expand: an image beside text</strong></summary>
 
 ```liquid
 {% raw %}{% include images/figure-wrap.html
@@ -400,7 +515,12 @@ Upload a picture to `assets/images/`. Then, on the page:
 
 Change `image-position` to `left` or `right` to switch sides.
 
+</details>
+
 ### Example: a card grid
+
+<details markdown="1">
+<summary><strong>Click to expand: a card grid</strong></summary>
 
 A **card** is a small preview with a picture, a title, a short description, and a link. A **card grid** shows many cards in a tidy layout, useful for a homepage or a collection of student work.
 
@@ -422,7 +542,12 @@ thumbnail: images/teapot.jpg
 
 If a card is missing or looks wrong, check: Is there a `title`? Does the thumbnail file exist at that path? Is the page marked as a draft?
 
+</details>
+
 ### Example: other helpful includes
+
+<details markdown="1">
+<summary><strong>Click to expand: more includes you can use</strong></summary>
 
 Look in these folders to see what is available. Each file explains itself.
 
@@ -439,7 +564,12 @@ Look in these folders to see what is available. Each file explains itself.
 
 The [Component Library](https://xanthan-web.github.io/docs/reference/component-library) shows a picture and example of each one.
 
+</details>
+
 ### Editing an include (advanced)
+
+<details markdown="1">
+<summary><strong>Click to expand: advanced, editing an include</strong></summary>
 
 You rarely need to change the files in `_includes`. Changing one changes it **everywhere it is used**. If you do edit one:
 
@@ -449,6 +579,12 @@ You rarely need to change the files in `_includes`. Changing one changes it **ev
 4. Use GitHub Desktop's **History** tab to undo it if something breaks.
 
 The most common mistakes are a missing quotation mark, missing `%}`, or a misspelled parameter name.
+
+</details>
+
+[↑ Back to contents](#contents)
+
+---
 
 ## Change the look with assets/css
 
@@ -491,6 +627,9 @@ See the [Colors and fonts guide](https://xanthan-web.github.io/docs/reference/co
 Instead of changing several framework files, use the site's theme override file if the template provides one. Check `_config.yml` for a setting such as `theme_css:` to find the active theme file, then look in `assets/css/themes/`. Add your overrides at the **bottom of the active theme file** so they are easy to find and adjust. If your template does not use a theme file, follow the comments in its CSS files and the Xanthan documentation.
 
 ### Examples you can copy
+
+<details markdown="1">
+<summary><strong>Click to expand: copy-and-paste CSS examples</strong></summary>
 
 Each example goes at the bottom of your theme file (or the file named in the example). Save, refresh, and check. Remove the lines to undo.
 
@@ -553,7 +692,12 @@ p {
 
 **Change the banner height or image position:** this is controlled on each page in the front matter. See "Change the page header" above.
 
+</details>
+
 ### CSS words to recognize
+
+<details markdown="1">
+<summary><strong>Click to expand: CSS vocabulary</strong></summary>
 
 | Word | Meaning |
 |---|---|
@@ -565,12 +709,23 @@ p {
 | `text-align` | `left`, `center`, or `right`. |
 | `font-weight` | `400` is normal, `700` is bold. |
 
+</details>
+
 ### If your CSS change does nothing
+
+<details markdown="1">
+<summary><strong>Click to expand: CSS troubleshooting</strong></summary>
 
 - Did you save, commit, push, and wait a few minutes? Try a hard refresh (**Ctrl+Shift+R**, or **Cmd+Shift+R** on Mac).
 - Is each rule inside curly braces `{ }`, and does every line end in a semicolon `;`?
 - Is another rule overriding it? Search all files for the same name (Ctrl+Shift+F). If you edited an earlier file and a theme file overrides it, edit the theme file instead.
 - Undo your last change and try again with only one change.
+
+</details>
+
+[↑ Back to contents](#contents)
+
+---
 
 ## Write the student Instructions page
 
@@ -590,7 +745,11 @@ Open `instructions.md` and revise it using your planning answers. Make sure it s
 
 Write for someone who has never used GitHub. Use numbered steps, short sentences, and a finished example. Remove steps that do not apply (for example, delete the audio steps if no one will add audio).
 
-**Test it yourself.** Before the class begins, follow your own instructions from start to finish as if you were a student, ideally in a copy of the site. Fix any step that is confusing.
+> ✅ **Test it yourself.** Before the class begins, follow your own instructions from start to finish as if you were a student, ideally in a copy of the site. Fix any step that is confusing.
+
+[↑ Back to contents](#contents)
+
+---
 
 ## What to tell your students
 
@@ -603,6 +762,10 @@ Once your website is ready, give students the site address and explain how they 
 5. Ask you for help if stuck, and include which step they were on plus a screenshot or any error message.
 
 Remind students that the **Instructions tab on your site** is the guide for your assignment. They do not need to read the Xanthan documentation.
+
+[↑ Back to contents](#contents)
+
+---
 
 ## Check your work and fix problems
 
@@ -622,6 +785,10 @@ After each set of changes, commit, wait one to three minutes, then refresh. Comm
 
 For more help, see the [Xanthan troubleshooting guide](https://xanthan-web.github.io/docs/reference/troubleshooting).
 
+[↑ Back to contents](#contents)
+
+---
+
 ## Before you share the site
 
 Use this quick checklist before students begin:
@@ -633,6 +800,10 @@ Use this quick checklist before students begin:
 - [ ] The Instructions page says exactly what students should create, where files belong, and how to save their changes.
 - [ ] You have considered public visibility, names, image permissions, and privacy.
 - [ ] You have a backup or know how to use GitHub history to undo a change.
+
+[↑ Back to contents](#contents)
+
+---
 
 ## Useful Xanthan references
 
