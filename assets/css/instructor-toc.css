@@ -1,0 +1,48 @@
+/* Navigation aids for the instructor guide: smooth scrolling, a tidy
+   contents list, and a quiet "back to contents" link after each section. */
+
+html { scroll-behavior: smooth; }
+
+.container h2 { scroll-margin-top: 5rem; }
+#contents { scroll-margin-top: 5rem; }
+
+.guide-contents {
+  columns: 2 16rem;
+  column-gap: var(--spacing-xl, 2rem);
+  padding: var(--spacing-md, 1rem) var(--spacing-md, 1rem) var(--spacing-md, 1rem) 2.5rem;
+  background: var(--bg-card, #faf7f2);
+  border: 1px solid var(--border-light, #e5ded3);
+  border-radius: var(--radius-md, 8px);
+}
+
+.guide-contents li { break-inside: avoid; padding: 0.15rem 0; }
+.guide-contents a { text-decoration: none; }
+.guide-contents a:hover { text-decoration: underline; }
+
+/* Right-aligned, faint until hovered, so it blends into the page. */
+.back-to-toc {
+  margin: var(--spacing-lg, 1.5rem) 0 0;
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.back-to-toc a {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  color: var(--text-muted, #777);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.15s, background-color 0.15s, color 0.15s;
+}
+
+.back-to-toc a:hover,
+.back-to-toc a:focus-visible {
+  opacity: 1;
+  color: var(--accent-primary, #a0522d);
+  background: var(--bg-card, rgba(0, 0, 0, 0.04));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

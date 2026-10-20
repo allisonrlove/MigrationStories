@@ -6,6 +6,7 @@ header-tier: banner
 permalink: /instructors-two
 header-title: Instructions for Instructors
 header-position: 35% center
+css: instructor-toc.css
 ---
 
 # Build and edit your own class website with Xanthan
@@ -30,6 +31,24 @@ This guide is a companion to the [Xanthan documentation](https://xanthan-web.git
 12. [Troubleshoot common problems](#check-your-work-and-fix-problems)
 13. [Words you will see](#words-you-will-see)
 14. [Useful Xanthan references](#useful-xanthan-references)
+{: #contents .guide-contents}
+
+{% include nav/scrollspy-toc.html %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var container = document.querySelector('.container');
+  var sections = container.querySelectorAll('h2');
+  function backLink() {
+    var p = document.createElement('p');
+    p.className = 'back-to-toc';
+    p.innerHTML = '<a href="#contents">\u2191 Back to contents</a>';
+    return p;
+  }
+  sections.forEach(function (h, i) { if (i > 0) h.parentNode.insertBefore(backLink(), h); });
+  container.appendChild(backLink());
+});
+</script>
 
 ## Words you will see
 
