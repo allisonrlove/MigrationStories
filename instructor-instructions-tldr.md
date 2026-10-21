@@ -18,21 +18,38 @@ For detailed explanations of Xanthan features, visit the [Xanthan documentation]
 
 ## Table of Contents
 
-1. [Plan your website](#plan-your-website)
-2. [Start with a Xanthan template](#start-with-a-xanthan-template)
-3. [Edit your website](#edit-your-website)
-4. [Folders and files](#folders-and-files)
-5. [Instructions are hidden inside the folders](#instructions-are-hidden-inside-the-folders)
-6. [Design your website](#design-your-website)
-7. [Set up student pages](#set-up-student-pages)
-8. [Write the student Instructions page](#write-the-student-instructions-page)
-9. [Test the student experience](#test-the-student-experience)
-10. [Before you share the site](#before-you-share-the-site)
-11. [Words you will see](#words-you-will-see)
+1. [Words you will see](#words-you-will-see)
+2. [Plan your website](#plan-your-website)
+3. [Start with a Xanthan template](#start-with-a-xanthan-template)
+4. [Edit your website](#edit-your-website)
+5. [Folders and files](#folders-and-files)
+6. [Instructions are hidden inside the folders](#instructions-are-hidden-inside-the-folders)
+7. [Design your website](#design-your-website)
+8. [Set up student pages](#set-up-student-pages)
+9. [Write the student Instructions page](#write-the-student-instructions-page)
+10. [Test the student experience](#test-the-student-experience)
+11. [Before you share the site](#before-you-share-the-site)
 12. [Useful Xanthan references](#useful-xanthan-references)
 {: #contents .guide-contents}
 
 {% include nav/scrollspy-toc.html %}
+
+## Words you will see
+
+You do not need to memorize these. Come back here if a word is unfamiliar.
+
+| Word | What it means in plain language |
+|---|---|
+| **GitHub** | A free website that stores your site's files and publishes your website. |
+| **Repository** ("repo") | The folder on GitHub that holds all of your website's files. |
+| **Template** | A ready-made starter website you copy and then change. |
+| **Markdown** (`.md` file) | A text file where simple symbols format your writing. `## Title` becomes a heading; `**bold**` becomes **bold**. |
+| **Front matter** | The small block of settings at the very top of a page, between two lines of `---`. |
+| **Include** | A reusable building block (a card, an image with a caption, an audio player) that you place on a page. |
+| **CSS** | Files that control how the site looks: colors, fonts, sizes, spacing. |
+| **Commit** | Saving your changes to GitHub. You write a short note describing what you changed. |
+| **Push** | Sending your saved changes to GitHub so the live site updates. |
+| **Path** | The address of a file inside your site, such as `/assets/images/photo.jpg`. |
 
 ## Plan your website
 
@@ -256,6 +273,26 @@ Also check that navigation links work, images display correctly, and the website
 
 If possible, ask someone unfamiliar with the project to try the process. Fix confusing steps before students begin.
 
+## What to tell your students
+
+Once your website is ready, give students the site address and explain how they will contribute. Tell them to:
+
+1. **Create a free GitHub account** at [github.com](https://github.com/) before the first work session. Ask them to send you their GitHub username so you can invite them as collaborators if your assignment needs it. (Open the repository, then **Settings → Collaborators → Add people**.)
+2. Open the class website and click the **Instructions** tab.
+3. **Follow the Instructions tab step by step.** It explains how to add their page, enter their text, and upload images or audio.
+4. Save their work (commit) as the instructions describe, wait a few minutes, and check their page on the live site.
+5. Ask you for help if stuck, and include which step they were on plus a screenshot or any error message.
+
+
+## What Amaranth can do for you
+
+Amaranth can work with you every step of the way to help you and your class create this project. 
+
+- Think about if you want Amaranth to visit your class to introduce students to Xanthan and Github; we are avaliable to meet all throughout the semester.
+- Plan how you want students to show their work, we have found that having small checkpoints throughout the semester, rather than one big project at the end, works the best.
+- Let your students know Amaranth's office hours so that they can reach out for help if they need it. 
+
+
 ## Before you share the site
 
 - [ ] The homepage explains the class project.
@@ -267,22 +304,7 @@ If possible, ask someone unfamiliar with the project to try the process. Fix con
 - [ ] You have tested the process from a student's perspective.
 - [ ] You have considered public visibility, student privacy, and image permissions.
 
-## Words you will see
 
-You do not need to memorize these. Come back here if a word is unfamiliar.
-
-| Word | What it means in plain language |
-|---|---|
-| **GitHub** | A free website that stores your site's files and publishes your website. |
-| **Repository** ("repo") | The folder on GitHub that holds all of your website's files. |
-| **Template** | A ready-made starter website you copy and then change. |
-| **Markdown** (`.md` file) | A text file where simple symbols format your writing. `## Title` becomes a heading; `**bold**` becomes **bold**. |
-| **Front matter** | The small block of settings at the very top of a page, between two lines of `---`. |
-| **Include** | A reusable building block (a card, an image with a caption, an audio player) that you place on a page. |
-| **CSS** | Files that control how the site looks: colors, fonts, sizes, spacing. |
-| **Commit** | Saving your changes to GitHub. You write a short note describing what you changed. |
-| **Push** | Sending your saved changes to GitHub so the live site updates. |
-| **Path** | The address of a file inside your site, such as `/assets/images/photo.jpg`. |
 
 ## Useful Xanthan references
 
