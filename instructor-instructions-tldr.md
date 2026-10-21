@@ -30,6 +30,9 @@ For detailed explanations of Xanthan features, visit the [Xanthan documentation]
 10. [Before you share the site](#before-you-share-the-site)
 11. [Words you will see](#words-you-will-see)
 12. [Useful Xanthan references](#useful-xanthan-references)
+{: #contents .guide-contents}
+
+{% include nav/scrollspy-toc.html %}
 
 ## Plan your website
 
